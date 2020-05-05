@@ -1,3 +1,16 @@
+const pageButton = document.querySelectorAll('button');
+const display = document.querySelector('input');
+let displayValue = "";
+let inputValue1 = 0;
+let inputValue2 = 0;
+let operatorValue = "";
+let firstInput = true;
+let newCalc = true;
+let firstPass = true;
+let decimal = "";
+let calcValue = 0;
+
+
 function add(a, b) {
 
   return a + b;
@@ -18,8 +31,6 @@ function divide(a, b){
   return a / b;
 }
 
-
-
 function operate(operator, number1, number2) {
    
   value = window[operator](number1,
@@ -27,26 +38,6 @@ function operate(operator, number1, number2) {
   
   return value;
 }
-
-
-
-let pageButton = document.querySelectorAll('button');
-
-let displayValue = "";
-
-let display = document.querySelector('input');
-
-let inputValue1 = 0;
-let inputValue2 = 0;
-let runningValue = 0;
-let operatorValue = "";
-let firstNum = 0;
-let firstInput = true;
-let newCalc = true;
-let runner = 0;
-let firstPass = true;
-let decimal = "";
-let calcValue = 0;
 
 for(let i = 0; i < pageButton.length; i += 1) {
 
@@ -133,7 +124,7 @@ for(let i = 0; i < pageButton.length; i += 1) {
          display.value = "0";
          displayValue = "";
          firstInput = true;
-         runningValue = 0;
+         
          inputValue1 = 0;
          inputValue2 = 0;
          firstPass = true;
@@ -154,7 +145,7 @@ for(let i = 0; i < pageButton.length; i += 1) {
        
          });
             
-         }
+}
     
         
          
