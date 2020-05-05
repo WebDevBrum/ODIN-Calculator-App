@@ -48,6 +48,9 @@ let firstInput = true;
 let newCalc = true;
 let runner = 0;
 let firstPass = true;
+let decimal = "";
+
+
 
 let calcValue = 0;
 
@@ -63,17 +66,17 @@ if(pageButton[i].className === "number") {
    inputValue1 = 0;
    displayValue += pageButton[i].value; 
    display.value = displayValue;
-   inputValue1 = parseInt(display.value) ;
+   inputValue1 = parseFloat(display.value) ;
    
    } 
    else if (firstInput === false) {
    displayValue += pageButton[i].value; 
    display.value = displayValue;
-   inputValue2 = parseInt(display.value) ;
+   inputValue2 = parseFloat(display.value) ;
    }
    
     
-     
+     decimal.disabled = false;
    
          } else if (pageButton[i].className === "operator" && firstPass === true ) {
           
@@ -139,8 +142,15 @@ if(pageButton[i].className === "number") {
          firstInput = true;
          runningValue = 0;
          inputValue1 = 0;
-         inputValie2 = 0;
+         inputValue2 = 0;
          firstPass = true;
+         }
+         
+         else if ( pageButton[i].className === "decimal"){
+         displayValue += pageButton[i].value;
+         decimal = pageButton[i];
+         
+        decimal.disabled = true; console.log(pageButton[i].value);
          }
          
          
