@@ -16,7 +16,6 @@ html {
   box-sizing: inherit;
 }
 
-
 p {
   color: #b3b8bc;
   font-size: 2.5rem;
@@ -27,7 +26,6 @@ p {
   align-items: center;
   justify-content: center;
   margin-right: 5px;
-  
 }
 /* Basic calculator styling*/
 
@@ -41,10 +39,6 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  
-  
-  
-  
 }
 
 /*Screen*/
@@ -59,7 +53,6 @@ p {
    text-align: right;
    padding-right: 20px;
    padding-left: 10px;
-   
 }
 
 /*Buttons*/
