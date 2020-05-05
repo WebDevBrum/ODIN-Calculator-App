@@ -70,35 +70,35 @@ for (let i = 0; i < pageButton.length; i += 1) {
      
     } else if (pageButton[i].className === "operator" && firstPass === false) {
       
-        calcValue = operate(operatorValue, inputValue1, inputValue2);
+      calcValue = operate(operatorValue, inputValue1, inputValue2);
       
-        operatorValue = pageButton[i].value;
-        display.value = calcValue;
-        inputValue1 = calcValue;
-        displayValue = "";
+      operatorValue = pageButton[i].value;
+      display.value = calcValue;
+      inputValue1 = calcValue;
+      displayValue = "";
     
-      } else if  (pageButton[i].className === "equal-sign") {
+    } else if  (pageButton[i].className === "equal-sign") {
    
-        calcValue =  operate(operatorValue, inputValue1, inputValue2);
+      calcValue =  operate(operatorValue, inputValue1, inputValue2);
           
-        display.value = calcValue;
-        inputValue1 = calcValue;
-        displayValue = "";
-        newCalc = true;
-        firstPass = true;
+      display.value = calcValue;
+      inputValue1 = calcValue;
+      displayValue = "";
+      newCalc = true;
+      firstPass = true;
        
-      } else if (pageButton[i].className === "all-clear") {
-          display.value = "0";
-          displayValue = "";
-          firstInput = true;
-          inputValue1 = 0;
-          inputValue2 = 0;
-          firstPass = true;
+    } else if (pageButton[i].className === "all-clear") {
+        display.value = "0";
+        displayValue = "";
+        firstInput = true;
+        inputValue1 = 0;
+        inputValue2 = 0;
+        firstPass = true;
         
-      } else if ( pageButton[i].className === "decimal") {
-          displayValue += pageButton[i].value;
-          decimal = pageButton[i];
-          decimal.disabled = true; 
+    } else if ( pageButton[i].className === "decimal") {
+        displayValue += pageButton[i].value;
+        decimal = pageButton[i];
+        decimal.disabled = true; 
       }
   });
 }
