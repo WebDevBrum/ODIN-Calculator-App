@@ -46,7 +46,10 @@ let operatorValue = "";
 let firstNum = 0;
 let firstInput = true;
 let newCalc = true;
+let runner = 0;
+let firstPass = true;
 
+let calcValue = 0;
 
 for(let i = 0; i < pageButton.length; i += 1) {
 
@@ -61,53 +64,72 @@ if(pageButton[i].className === "number") {
    displayValue += pageButton[i].value; 
    display.value = displayValue;
    inputValue1 = parseInt(display.value) ;
-   //newCalc = false;
-   //firstInput = false;
-   console.log(inputValue1);} 
+   
+   } 
    else if (firstInput === false) {
    displayValue += pageButton[i].value; 
    display.value = displayValue;
    inputValue2 = parseInt(display.value) ;
-   console.log(inputValue2);}
+   }
    
     
-  // display.value = displayValue;
      
    
-         } else if (pageButton[i].className === "operator") {
+         } else if (pageButton[i].className === "operator" && firstPass === true ) {
           
           
-     operatorValue = pageButton[i].value;
-         
-     displayValue = "";
-         
-     firstInput = false;
-     newCalc = false;
-         
-         }
-         
-         
-       else  if(pageButton[i].className === "equal-sign") {
+    operatorValue = pageButton[i].value;
+    displayValue = "";
+    firstInput = false;
+    newCalc = false;
+    firstPass = false;
+     
+  } 
+  
+  else if (pageButton[i].className === "operator" && firstPass === false) {
+      
+      
+      
+      calcValue = operate(operatorValue, inputValue1, inputValue2);
+      
+      operatorValue = pageButton[i].value;
+      
+      
+      display.value = calcValue;
+      
+      inputValue1 = calcValue;
+       
+      
+      
+       displayValue = "";
+       
+       
+       
     
-   displayValue = "";
-       display.value =  operate(operatorValue, inputValue1, inputValue2);
+     }
+      
+         
+   else if  (pageButton[i].className === "equal-sign") {
+   
+       calcValue =  operate(operatorValue, inputValue1, inputValue2);
+       
+      display.value = calcValue;
+      
+      inputValue1 = calcValue;
+      
+       displayValue = "";
        
        
        
-       
-       
-       
-       inputValue1 = parseInt(display.value);
+     
        
        newCalc = true;
-   
+       firstPass = true;
+       
+       
+      }
       
-      console.log(displayValue);
-      
-       
-       
-       
-       }
+ 
        
        
        
@@ -116,6 +138,9 @@ if(pageButton[i].className === "number") {
          displayValue = "";
          firstInput = true;
          runningValue = 0;
+         inputValue1 = 0;
+         inputValie2 = 0;
+         firstPass = true;
          }
          
          
