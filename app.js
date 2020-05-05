@@ -26,9 +26,6 @@ function operate(operator, number1, number2) {
   number2);
   
   return value;
-  
-
-	
 }
 
 
@@ -49,36 +46,30 @@ let newCalc = true;
 let runner = 0;
 let firstPass = true;
 let decimal = "";
-
-
-
 let calcValue = 0;
 
 for(let i = 0; i < pageButton.length; i += 1) {
 
-pageButton[i].addEventListener('click', (e) => { 
+  pageButton[i].addEventListener('click', (e) => { 
 
-
-
-if(pageButton[i].className === "number") {
+    if (pageButton[i].className === "number") {
     
-   if(firstInput || newCalc) {
-   inputValue1 = 0;
-   displayValue += pageButton[i].value; 
-   display.value = displayValue;
-   inputValue1 = parseFloat(display.value) ;
+      if(firstInput || newCalc) {
+      
+        inputValue1 = 0;
+        displayValue += pageButton[i].value; 
+        display.value = displayValue;
+        inputValue1 = parseFloat(display.value);
+     
+      } else if (firstInput === false) {
+          displayValue += pageButton[i].value; 
+          display.value = displayValue;
+          inputValue2 = parseFloat(display.value);
+        }
    
-   } 
-   else if (firstInput === false) {
-   displayValue += pageButton[i].value; 
-   display.value = displayValue;
-   inputValue2 = parseFloat(display.value) ;
-   }
+        decimal.disabled = false;
    
-    
-     decimal.disabled = false;
-   
-         } else if (pageButton[i].className === "operator" && firstPass === true ) {
+     } else if (pageButton[i].className === "operator" && firstPass === true ) {
           
           
     operatorValue = pageButton[i].value;
@@ -113,6 +104,8 @@ if(pageButton[i].className === "number") {
       
          
    else if  (pageButton[i].className === "equal-sign") {
+   
+   
    
        calcValue =  operate(operatorValue, inputValue1, inputValue2);
        
