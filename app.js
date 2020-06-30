@@ -44,7 +44,7 @@ for (let i = 0; i < pageButton.length; i += 1) {
 
     if (pageButton[i].className === "number") {
     
-      if(firstInput || newCalc) {
+      if (firstInput || newCalc) {
       
         inputValue1 = 0;
         displayValue += pageButton[i].value; 
