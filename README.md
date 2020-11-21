@@ -6,8 +6,6 @@ permalink: /index.html
 
 ### The Odin Project 
 
----
-
 ## Javascript calculator 
 
 <img src='readme-images/front.jpeg' width='350' height='200' alt='project preview'/>
