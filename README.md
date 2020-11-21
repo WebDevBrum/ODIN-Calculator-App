@@ -4,11 +4,11 @@ permalink: /index.html
 
 <img src='readme-images/logo.png' width='100' height='100' alt='logo'/>
 
-## The Odin Project 
+### The Odin Project 
 
 ---
 
-# Javascript calculator 
+## Javascript calculator 
 
 <img src='readme-images/front.jpeg' width='350' height='200' alt='project preview'/>
 
